@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
     />
-<link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
-  <title>Document</title>
-</head>
-<body>
-  <a href="/budgets/:index"></a>
-  <div class="container">
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/budgets/:index"></a>
+    <div class="container">
       <h1>Budget</h1>
 
       <form action="/budgets" method="POST">
+        Date: <input type="text" name="date" placeholder="date" /><br />
+        Name: <input type="text" name="name" placeholder="name" /><br />
+        Amount: <input type="text" name="amount" placeholder="amount" /><br />
+        From: <input type="text" name="from" placeholder="from" /><br />
+        Tags: <input type="text" name="tags" placeholder="tags" /><br />
 
-           Date: <input type="text" name="date" placeholder="Date"/><br/>
-           Name: <input type="text" name="name" placeholder="Name"/><br/>
-           Amount: <input type="text" name="Amount" placeholder="Amount"/><br/>
-           From: <input type="text" name="from" placeholder="From"/><br/>
-           Submit: <input type="text" name="submit" placeholder="Submit"/><br/>
-           Tags: <input type="text" name="tags" placeholder="Tags"/><br/>
-
-        <input type="submit" value="Create Budget">
+        <input type="submit" value="Create Budget" />
       </form>
-  </div>
-</body>
+    </div>
+  </body>
 </html>

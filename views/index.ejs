@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
     />
-<link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
 
-  <title>Document</title>
-</head>
-<body>
-  
-  <h1>Budgtr ALL</h1>
-  <div class="containter">
-    <table>
-        <% for(let i = 0; i < budgets.length; i++) { %>
-        <tr> <%= budgets[i].length %> </tr>
-        <td> <%= budgets[i].date %> </td>
-        <td><a href="/budgets/<%=i%>" onclick="addAmount"><%=budgets[i].name %></a></td>
-        <td> <%= budgets[i].amount %> </td>
-        <% } %>
-   </table>
-  </div>
+    <title>Document</title>
+  </head>
+  <body >
 
-  <a href="/budgets/new">Create new expanse</a>
+    <h1>Budgtr ALL</h1>
+ 
+      <% let bankAccount = 0 
+       for (let i =0; i < budgets.length; i++) {
+       bankAccount += parseInt(budgets[i].amount)
+       } %>
 
-</body>
+     <div><h1><%= bankAccount %></h1></div>
+
+    <div class="containter">
+
+
+      <a href="/budgets/new"><button>Create new expense</button></a>
+
+
+         <table>
+            <% for(let i = 0; i < budgets.length; i++) { %>
+        <tr>
+           <td><%= budgets[i].date %></td>
+          <td>
+                <a href="/budgets/<%=i%>" ><%=budgets[i].name %></a>
+          </td>
+          <td><%= budgets[i].amount %></td>
+        </tr>
+       <% } %>
+      </table>
+      <% if (bankAccount > 1000) { %> <style>body {background-color: green;}</style>}<%
+    } 
+      else if (bankAccount < 0) { %> <style>body {background-color: red;} </style> <%}%>
+ 
+    </div>
+    
+    
+  </body>
 </html>
